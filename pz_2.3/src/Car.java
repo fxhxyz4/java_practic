@@ -1,23 +1,28 @@
-import Data.CategoryList;
-import java.math.BigInteger;
-import java.time.Year;
+public abstract class Car {
+    protected String model;
+    protected int maxSpeed;
+    protected double fuelConsumption;
+    protected int price;
 
-public class Car {
-    private String model;
-    private String category;
-    private Year releaseYear;
-    private BigInteger price = BigInteger.ZERO;
-
-    private boolean isTrueCategory = false;
-
-    public Car() {}
-
-    public Car(String model, String category,  Year releaseYear, BigInteger price) {
+    public Car(String model, int maxSpeed, double fuelConsumption, int price) {
         this.model = model;
-        isTrueCategory = CategoryList.checkCategory(category);
+        this.maxSpeed = maxSpeed;
 
-        this.releaseYear = releaseYear;
+        this.fuelConsumption = fuelConsumption;
         this.price = price;
     }
 
+    public int getPrice() {
+        return price;
+    }
+
+    public double getFuelConsumption() {
+        return fuelConsumption;
+    }
+
+    public int getMaxSpeed() {
+        return maxSpeed;
+    }
+
+    public abstract void info();
 }

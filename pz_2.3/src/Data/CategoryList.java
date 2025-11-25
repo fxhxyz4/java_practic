@@ -11,17 +11,14 @@ public class CategoryList {
         return categoryList.length;
     }
 
-    /* @param {String} category
-     * @return {Boolean} t/f
-     */
     public static boolean checkCategory(String category) {
-        for (int i = 0; i < categorySize(); i++) {
-            if (categoryList[i].equals(category)) {
-                System.out.println("Error with selected category");
+        for (String s : categoryList) {
+            if (s.equals(category)) {
                 return true;
             }
         }
 
+        System.out.println("Error with selected category");
         return false;
     }
 }
