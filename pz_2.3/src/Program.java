@@ -2,6 +2,8 @@ import java.sql.SQLOutput;
 
 public class Program {
     public static void main(String[] args) {
+        System.out.println("-------------------------------------\n\n\n\n");
+
         System.out.println("-------------- 1 ZAVD --------------");
         TaxiPark park = new TaxiPark(10);
 
@@ -14,7 +16,7 @@ public class Program {
         System.out.println("Сумарна пасажиромісткість: " + park.totalPassengers());
 
         System.out.println("\n\nАвто зі швидкістю 180 км/год:");
-        park.findByMaxSpeed(180);
+        park.findByMaxSpeed(320);
 
         System.out.println("-------------- 2 ZAVD --------------");
 
@@ -26,7 +28,7 @@ public class Program {
 
         printArr(list);
 
-        System.out.println("\n=== TEST 2: add(index) ===");
+        System.out.println("\n=== add ===");
         list.add(1, new Box("X"));
         printArr(list);
 
@@ -34,29 +36,29 @@ public class Program {
         list.addAll(arr1);
         printArr(list);
 
-        System.out.println("\n=== TEST 4: addAll(index) ===");
+        System.out.println("\n=== addAll ===");
         Box[] arr2 = { new Box("Y"), new Box("Z") };
 
         list.addAll(2, arr2);
         printArr(list);
 
-        System.out.println("\n=== TEST 5: ensureCapacity ===");
+        System.out.println("\n=== ensureCapacity ===");
         list.ensureCapacity(50);
         System.out.println("ensureCapacity(50) выполнено.");
         printArr(list);
 
-        System.out.println("\n=== TEST 6: get() ===");
+        System.out.println("\n=== get ===");
         System.out.println("list.get(3) = " + list.get(2));
 
-        System.out.println("\n=== TEST 7: set() ===");
+        System.out.println("\n=== set ===");
         list.set(3, new Box("REPLACED"));
         printArr(list);
 
-        System.out.println("\n=== TEST 8: remove() и уменьшение capacity ===");
+        System.out.println("\n=== remove и уменьшение capacity ===");
         System.out.println("Удалили: " + list.remove(2));
         printArr(list);
 
-        System.out.println("\n=== TEST 9: size() ===");
+        System.out.println("\n=== size ===");
         System.out.println("Размер списка = " + list.size());
     }
 

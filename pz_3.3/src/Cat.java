@@ -1,6 +1,4 @@
-import javax.naming.Name;
 import java.time.LocalDate;
-import java.util.Locale;
 import java.util.Random;
 
 class Cat extends PetAnimal {

@@ -18,6 +18,7 @@ public class MyArrayList {
         if (minCapacity > capacity) {
             capacity = Math.max(minCapacity, capacity * 2);
             ArrayList<Box> newList = new ArrayList<>(capacity);
+
             newList.addAll(arrayList);
             arrayList = newList;
         }
@@ -33,6 +34,7 @@ public class MyArrayList {
             System.out.println("index exception");
             return;
         }
+
         ensureInternalCapacity(arrayList.size() + 1);
         arrayList.add(index, element);
     }
@@ -47,6 +49,7 @@ public class MyArrayList {
             System.out.println("index exception");
             return;
         }
+
         ensureInternalCapacity(arrayList.size() + c.length);
         for (int i = 0; i < c.length; i++) {
             arrayList.add(index + i, c[i]);
@@ -67,6 +70,7 @@ public class MyArrayList {
             System.out.println("index exception");
             return null;
         }
+
         return arrayList.get(index);
     }
 
@@ -75,6 +79,7 @@ public class MyArrayList {
             System.out.println("index exception");
             return;
         }
+
         arrayList.set(index, element);
     }
 
@@ -83,13 +88,17 @@ public class MyArrayList {
             System.out.println("index exception");
             return null;
         }
+
         Box removed = arrayList.remove(index);
+
         if (arrayList.size() <= capacity / 2 && capacity > 10) {
             capacity = Math.max(capacity / 2, 10);
             ArrayList<Box> newList = new ArrayList<>(capacity);
+
             newList.addAll(arrayList);
             arrayList = newList;
         }
+
         return removed;
     }
 

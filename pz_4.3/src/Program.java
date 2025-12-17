@@ -1,6 +1,5 @@
 import java.util.List;
 import java.util.Random;
-import java.util.function.Supplier;
 
 class Program {
     public static void main(String[] args) {
@@ -21,26 +20,26 @@ class Program {
         BattleEfficiencyAnalyzer.actOnUnits(filtered, System.out::println);
 
         double avgMorale = BattleEfficiencyAnalyzer.aggregate(units, (u) -> u.getMorale());
-                System.out.printf("%nСередній рівень моралі: %.2f%n", avgMorale);
+        System.out.printf("%nСередній рівень моралі: %.2f%n", avgMorale);
 
-                Unit u1 = units.get(2);
-                Unit u2 = units.get(3);
+        Unit u1 = units.get(2);
+        Unit u2 = units.get(3);
 
-                Unit better = BattleEfficiencyAnalyzer.compareUnits(
-                        u1,
-                        u2,
-                        (a, b) -> (a.getAccuracy() * a.getMorale()) > (b.getAccuracy() * b.getMorale()) ? a : b
-                );
+        Unit better = BattleEfficiencyAnalyzer.compareUnits(
+                u1,
+                u2,
+                (a, b) -> (a.getAccuracy() * a.getMorale()) > (b.getAccuracy() * b.getMorale()) ? a : b
+        );
 
-                System.out.printf("%nКраща одиниця за показником accuracy * morale: %s ( %s )%n", better.getName(), better.getType());
+        System.out.printf("%nКраща одиниця за показником accuracy * morale: %s ( %s )%n", better.getName(), better.getType());
 
-                List<String> report = BattleEfficiencyAnalyzer.transformUnits(
-                        units,
-                        u -> u.toString()
-                );
+        List<String> report = BattleEfficiencyAnalyzer.transformUnits(
+                units,
+                u -> u.toString()
+        );
 
-                System.out.println("\nТекстовий звіт:");
-                report.forEach(System.out::println);
+        System.out.println("\nТекстовий звіт:");
+        report.forEach(System.out::println);
 
         System.out.println("\n\n\n\n2 zadanie\n\n");
 

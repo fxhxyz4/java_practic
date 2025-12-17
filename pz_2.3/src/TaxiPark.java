@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Comparator;
 
 public class TaxiPark {
     private Car[] cars;
@@ -51,8 +52,7 @@ public class TaxiPark {
     }
 
     public void sortByFuelConsumption() {
-        Arrays.sort(cars, 0, count, (a, b) ->
-                Double.compare(a.getFuelConsumption(), b.getFuelConsumption()));
+        Arrays.sort(cars, 0, count, Comparator.comparingDouble(Car::getFuelConsumption));
     }
 
     public void findByMaxSpeed(int speed) {

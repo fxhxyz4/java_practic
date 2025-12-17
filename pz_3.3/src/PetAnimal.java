@@ -5,9 +5,7 @@ abstract class PetAnimal implements Comparable<PetAnimal> {
     public String name;
     public LocalDate yearOfBirth;
 
-    public PetAnimal() {
-
-    }
+    public PetAnimal() {}
 
     public PetAnimal(String name) {
         this(name, LocalDate.now());
